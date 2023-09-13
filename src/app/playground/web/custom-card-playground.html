@@ -1,0 +1,36 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" href="../../dist/tf-ng-elements/styles.css">
+        <script src="../../dist/tf-ng-elements/runtime.js"></script>
+        <script src="../../dist/tf-ng-elements/polyfills.js"></script>
+        <script src="../../dist/tf-ng-elements/main.js"></script>
+    </head>
+
+    <body>
+        <div>
+            <span>正被选择的用户：</span>
+            <span id="user"></span>
+        </div>
+        <custom-card id="1"></custom-card>
+        <custom-card id="2"></custom-card>
+        <script>
+            const user = document.getElementById('user');
+            const card = document.getElementById('1');
+            card.name = 'wt';
+            card.info = { age: 25, phone: '111-222-3333' };
+            card.addEventListener('selectUser', (e) =>
+            {
+                user.innerText = e.detail.name;
+            });
+            const card1 = document.getElementById('2');
+            card1.name = 'syc'
+            card1.info = { age: 18, phone: '555-666-3333' };
+            card1.addEventListener('selectUser', (e) =>
+            {
+                user.innerText = e.detail.name;
+            });
+        </script>
+    </body>
+
+</html>
